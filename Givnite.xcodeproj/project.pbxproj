@@ -12,6 +12,7 @@
 		5A43FFC41D415A0D005A0E18 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43FFC31D415A0D005A0E18 /* ChatsTableViewController.swift */; };
 		5A43FFC61D415A38005A0E18 /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */; };
 		5A43FFC81D415A5E005A0E18 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */; };
+		7E00AC7F1D4D019F003E6C7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */; };
 		7E3585801D3163E200CDBB76 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35857F1D3163E200CDBB76 /* ItemViewController.swift */; };
 		7E3585821D31645000CDBB76 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3585811D31645000CDBB76 /* CollectionViewCell.swift */; };
 		7E42DF791D3A8B250074E8BC /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E42DF781D3A8B250074E8BC /* MarketplaceViewController.swift */; };
@@ -31,7 +32,6 @@
 		7EE5889A1D4C0A7C00A0AD71 /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE588991D4C0A7C00A0AD71 /* SettingProfileViewController.swift */; };
 		7EE5889C1D4C118800A0AD71 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5889B1D4C118800A0AD71 /* SettingTableViewController.swift */; };
 		7EE5889E1D4C12D100A0AD71 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5889D1D4C12D100A0AD71 /* LogOutViewController.swift */; };
-		7EE6232C1D2EC1A900B6DA60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE6232B1D2EC1A900B6DA60 /* GoogleService-Info.plist */; };
 		7EF8D0451D4A6DDB006FDF05 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */; };
 		7EF976CC1D304178000E22F8 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF976CB1D304178000E22F8 /* Camera.swift */; };
 		7EFF08E31D3EB964000C0E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF08E21D3EB964000C0E4D /* ViewController.swift */; };
@@ -81,6 +81,7 @@
 		5A43FFC31D415A0D005A0E18 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleChatViewController.swift; sourceTree = "<group>"; };
 		5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E35857F1D3163E200CDBB76 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		7E3585811D31645000CDBB76 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7E42DF781D3A8B250074E8BC /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		7EE588991D4C0A7C00A0AD71 /* SettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
 		7EE5889B1D4C118800A0AD71 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		7EE5889D1D4C12D100A0AD71 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
-		7EE6232B1D2EC1A900B6DA60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		7EF976CB1D304178000E22F8 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		7EFF08E21D3EB964000C0E4D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 				C44D0E371D277FDC00C8EC92 /* Assets.xcassets */,
 				C44D0E391D277FDC00C8EC92 /* LaunchScreen.storyboard */,
 				C44D0E3C1D277FDC00C8EC92 /* Info.plist */,
-				7EE6232B1D2EC1A900B6DA60 /* GoogleService-Info.plist */,
+				7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */,
 				C4F0FD861D2809BD00DD434B /* ZFRippleButton.swift */,
 				C4A50D471D2813F20044C65F /* TextFieldEffect.swift */,
 				C4C5BD141D3883F9009679BA /* RSKPlaceholderTextView.swift */,
@@ -360,11 +360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44D0E3B1D277FDC00C8EC92 /* LaunchScreen.storyboard in Resources */,
-				7EE6232C1D2EC1A900B6DA60 /* GoogleService-Info.plist in Resources */,
 				C44D0E381D277FDC00C8EC92 /* Assets.xcassets in Resources */,
 				C482596D1D402F6D00E3497F /* LoadingView.xib in Resources */,
 				C482596A1D402F6D00E3497F /* Info.plist in Resources */,
 				7EA0A9221D300A0100CD895E /* Main.storyboard in Resources */,
+				7E00AC7F1D4D019F003E6C7C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

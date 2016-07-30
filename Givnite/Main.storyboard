@@ -487,7 +487,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatListItem" rowHeight="60" id="ucN-rd-OBx" customClass="ChatTableViewCell" customModule="Givnite" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucN-rd-OBx" id="Tmn-7b-efJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -592,7 +592,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sSU-gq-lxB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cdv-AW-Ox5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

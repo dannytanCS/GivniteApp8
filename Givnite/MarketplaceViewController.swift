@@ -20,8 +20,8 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
 
   
 
-    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp.appspot.com")
-    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
+    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     let user = FIRAuth.auth()?.currentUser
     var imageNameArray = [String]()
     var imageArray = [UIImage]()

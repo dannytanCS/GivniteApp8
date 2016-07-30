@@ -49,9 +49,9 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     
     
-    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp.appspot.com")
+    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
 
-    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     let user = FIRAuth.auth()!.currentUser
 
     
@@ -147,7 +147,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
       
        
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: #selector(ItemViewController.timefunc), userInfo: nil, repeats: true)
+        //var timer = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: #selector(ItemViewController.timefunc), userInfo: nil, repeats: true)
         self.view.bringSubviewToFront(name)
         self.view.bringSubviewToFront(addButton)
         self.view.bringSubviewToFront(settingButton)

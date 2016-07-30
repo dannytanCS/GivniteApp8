@@ -35,7 +35,7 @@ class ConnectionViewController: UIViewController,UITableViewDelegate {
         
 
      
-        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
         let user = FIRAuth.auth()!.currentUser
         
         
@@ -73,9 +73,9 @@ class ConnectionViewController: UIViewController,UITableViewDelegate {
     
     func getsTheConnections() {
         
-        let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp.appspot.com")
+        let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
         
-        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
         
         
         databaseRef.child("user").observeEventType(FIRDataEventType.Value, withBlock:{ (snapshot) -> Void in
@@ -207,7 +207,7 @@ class ConnectionViewController: UIViewController,UITableViewDelegate {
         var clickedButtonIndexPath: NSIndexPath = tableView.indexPathForRowAtPoint(touchPoint)!
         
         
-        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+        let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
         let user = FIRAuth.auth()!.currentUser
         
         

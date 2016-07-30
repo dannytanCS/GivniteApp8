@@ -35,8 +35,8 @@ class MarketItemViewController: UIViewController {
     @IBOutlet weak var bookDescription2: UITextView!
     
     
-    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp.appspot.com")
-    let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
+    let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     let user = FIRAuth.auth()!.currentUser
 
     

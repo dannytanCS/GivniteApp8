@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class SchoolViewController: UIViewController, UITextFieldDelegate {
     
-    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp.firebaseio.com/")
+    let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     
     //MARK: School Name
     
