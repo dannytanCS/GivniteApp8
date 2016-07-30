@@ -2139,27 +2139,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xa-k8-q0D">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bob Lee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-Dx-HK3">
-                                        <rect key="frame" x="73" y="37" width="311" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="daz-gz-4Uk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <color key="textColor" red="0.98431372549999996" green="0.2784313725" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5gs-Dx-HK3" secondAttribute="trailing" constant="32" id="1wP-KU-PMG"/>
-                                    <constraint firstItem="5gs-Dx-HK3" firstAttribute="leading" secondItem="5xa-k8-q0D" secondAttribute="leading" constant="32" id="Hmt-Jn-ucB"/>
-                                    <constraint firstAttribute="height" constant="58" id="Wuy-CB-BIv"/>
-                                    <constraint firstAttribute="bottom" secondItem="5gs-Dx-HK3" secondAttribute="bottom" constant="12" id="iYb-Ob-tbm"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehk-Xj-HVZ">
                                 <rect key="frame" x="15" y="24" width="15" height="22"/>
                                 <state key="normal" title="Back" image="Back Button"/>
@@ -2353,6 +2332,34 @@
                                     <constraint firstAttribute="trailing" secondItem="Dqm-3v-Isu" secondAttribute="trailing" constant="8" id="xIR-7h-Sz4"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xa-k8-q0D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bob Lee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-Dx-HK3">
+                                        <rect key="frame" x="73" y="37" width="311" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="daz-gz-4Uk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <color key="textColor" red="0.98431372549999996" green="0.2784313725" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bb-gx-qyK">
+                                        <rect key="frame" x="272" y="20" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="toProfileButton:" destination="Tnf-I5-fWN" eventType="touchUpInside" id="cAr-fd-p4l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5gs-Dx-HK3" secondAttribute="trailing" constant="32" id="1wP-KU-PMG"/>
+                                    <constraint firstItem="5gs-Dx-HK3" firstAttribute="leading" secondItem="5xa-k8-q0D" secondAttribute="leading" constant="32" id="Hmt-Jn-ucB"/>
+                                    <constraint firstAttribute="height" constant="58" id="Wuy-CB-BIv"/>
+                                    <constraint firstAttribute="bottom" secondItem="5gs-Dx-HK3" secondAttribute="bottom" constant="12" id="iYb-Ob-tbm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2387,6 +2394,7 @@
                     <navigationItem key="navigationItem" id="nYD-uH-PUB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="backButtonOutlet" destination="Ehk-Xj-HVZ" id="ZqY-wG-lgc"/>
                         <outlet property="bookAuthor" destination="6Jd-5J-mFB" id="JDW-3O-70L"/>
                         <outlet property="bookDescription" destination="fCI-ZS-6Zx" id="EjN-g1-qw9"/>
                         <outlet property="bookDescription2" destination="mDh-hP-HAf" id="U27-yD-IWv"/>
@@ -2479,10 +2487,10 @@
         <image name="user" width="23" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yDE-RF-xni"/>
-        <segue reference="4fR-zQ-iKg"/>
-        <segue reference="4FE-Dr-Dr8"/>
+        <segue reference="rF6-7x-mK6"/>
         <segue reference="Nm1-oM-csR"/>
+        <segue reference="qG4-99-uBB"/>
+        <segue reference="Ldv-4t-Rae"/>
         <segue reference="Mgg-ae-R6I"/>
     </inferredMetricsTieBreakers>
 </document>

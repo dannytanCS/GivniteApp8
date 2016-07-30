@@ -21,6 +21,7 @@ class MarketItemViewController: UIViewController {
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet weak var messageButton: SpringButton!
     
+    @IBOutlet weak var backButtonOutlet: UIButton!
     
     //isbn 
     
@@ -117,6 +118,7 @@ class MarketItemViewController: UIViewController {
         self.bookDescription.text = self.bkdescription
         self.bookDescription.editable = false
         self.descriptionView.hidden = true
+        self.view.bringSubviewToFront(backButtonOutlet)
 
         
         
