@@ -1585,7 +1585,7 @@
                         <outlet property="searchBarText" destination="9Xl-1B-9dB" id="F4F-hB-Tmm"/>
                         <segue destination="Tnf-I5-fWN" kind="modal" identifier="marketEnlarge" id="YfD-1C-9gm"/>
                         <segue destination="WKj-cM-742" kind="modal" identifier="showProfile" animates="NO" id="VtU-44-gMG"/>
-                        <segue destination="WKj-cM-742" kind="custom" identifier="backToProfile" customClass="LeftToRightUnwind" customModule="Givnite" customModuleProvider="target" id="4fR-zQ-iKg"/>
+                        <segue destination="WKj-cM-742" kind="custom" identifier="backToProfile" customClass="RightToLeft" customModule="Givnite" customModuleProvider="target" id="4fR-zQ-iKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z97-nz-WR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2480,7 +2480,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yDE-RF-xni"/>
-        <segue reference="VtU-44-gMG"/>
+        <segue reference="4fR-zQ-iKg"/>
         <segue reference="4FE-Dr-Dr8"/>
         <segue reference="Nm1-oM-csR"/>
         <segue reference="Mgg-ae-R6I"/>
