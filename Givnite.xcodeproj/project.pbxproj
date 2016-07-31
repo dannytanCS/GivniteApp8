@@ -244,18 +244,18 @@
 				7EBCD2D21D4942E8004203FE /* ConnectionViewController.swift */,
 				7EBCD2D61D496C23004203FE /* User.swift */,
 				7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */,
+				5A43FFC31D415A0D005A0E18 /* ChatsTableViewController.swift */,
+				5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */,
+				5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */,
 				7EA0A9211D300A0100CD895E /* Main.storyboard */,
 				7EE588981D4C0A2F00A0AD71 /* Settings */,
 				C44D0E371D277FDC00C8EC92 /* Assets.xcassets */,
 				C44D0E391D277FDC00C8EC92 /* LaunchScreen.storyboard */,
 				C44D0E3C1D277FDC00C8EC92 /* Info.plist */,
 				7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */,
-				C4F0FD861D2809BD00DD434B /* ZFRippleButton.swift */,
 				C4A50D471D2813F20044C65F /* TextFieldEffect.swift */,
+				C4F0FD861D2809BD00DD434B /* ZFRippleButton.swift */,
 				C4C5BD141D3883F9009679BA /* RSKPlaceholderTextView.swift */,
-				5A43FFC31D415A0D005A0E18 /* ChatsTableViewController.swift */,
-				5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */,
-				5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */,
 			);
 			path = Givnite;
 			sourceTree = "<group>";

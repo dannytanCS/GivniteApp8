@@ -17,76 +17,43 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var profilePicture: UIImageView!
-    
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var schoolNameLabel: UILabel!
-    
-    
-    @IBOutlet weak var graduationYearLabel: UILabel!
-    
-    @IBOutlet weak var addButton: SpringButton!
-    
-    @IBOutlet weak var majorLabel: UILabel!
-    
-    @IBOutlet weak var bioTextView: UITextView!
-    
-    @IBOutlet weak var settingButton: UIButton!
-    
-    
-    //connection buttons
-
-    
-    @IBOutlet weak var connectButton: DesignableButton!
-    
-    @IBOutlet weak var connectionButton: UIButton!
-    
-    var currentStateConnection:String?
-    
-    
-    
-    
-    
+    // Connect to Firebase
     let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
-
     let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     let user = FIRAuth.auth()!.currentUser
-
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var graduationYearLabel: UILabel!
+    @IBOutlet weak var addButton: SpringButton!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var bioTextView: UITextView!
+    @IBOutlet weak var settingButton: UIButton!
+    
+    //connection buttons
+    @IBOutlet weak var connectButton: DesignableButton!
+    @IBOutlet weak var connectionButton: UIButton!
+   
+    var currentStateConnection:String?
     var imageNameArray = [String]()
-    
     var imageArray = [UIImage]()
-    
     var userID: String?
-    
     var otherUser: Bool = false
-    
-    
-    var placeHolderText: String = "placeholder"
-    
-    
+    var placeHolderText: String = "Tell us about yourself!"
     let screenSize = UIScreen.mainScreen().bounds
-    
-    
     
     //from market item VC
     var marketVC: Bool = false
     var savedImageName: String?
- 
     
-    
-    //CHAT ADDITION
-    //CHAT ADDITION
-    //CHAT ADDITION
+    //Chat Addition
     var fbUID: String?
     var currentUserName: String?
     let firebaseUID = FIRAuth.auth()?.currentUser?.uid
 
- 
-    
-    
+    // SpringButton Animation
     func timefunc()
     {
         addButton.animation = "pop"
@@ -107,30 +74,22 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
         addButton.animate()
     }
     
+    // View Loaded
     override func viewDidLoad() {
-
-        
         connectButton.hidden = true
-        
         if otherUser == false && marketVC == false {
             userID = self.user?.uid
             storesInfoFromFB()
         }
-        
-
-    
         if otherUser == true || marketVC == true {
             print(123123)
             settingButton.hidden = true
             addButton.hidden = true
             connectionButton.hidden = true
-            
-            
-            if (user!.uid != userID!) {
+        if (user!.uid != userID!) {
                 print(123123)
                 connectButton.hidden = false
             }
-    
         }
 
         if marketVC == true {
@@ -140,38 +99,28 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
         
     
         
-        super.viewDidLoad()
-      
+    super.viewDidLoad()
+    
+    // Animate the camera upload button
+    NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: #selector(ItemViewController.timefunc), userInfo: nil, repeats: true)
+        
+    self.view.bringSubviewToFront(name)
+    self.view.bringSubviewToFront(addButton)
+    self.view.bringSubviewToFront(settingButton)
+        
+    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2
+    self.profilePicture.clipsToBounds = true
+    self.profilePicture.layer.borderWidth = 2
+    self.profilePicture.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0).CGColor
     
         
-      
-       
-        
-        //var timer = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: #selector(ItemViewController.timefunc), userInfo: nil, repeats: true)
-        self.view.bringSubviewToFront(name)
-        self.view.bringSubviewToFront(addButton)
-        self.view.bringSubviewToFront(settingButton)
-        
-        self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2
-        self.profilePicture.clipsToBounds = true
-        self.profilePicture.layer.borderWidth = 2
-        self.profilePicture.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0).CGColor
-    
-        
-    
-        
-        loadImages()
-        getProfileImage()
-        schoolInfo()
+    loadImages()
+    getProfileImage()
+    schoolInfo()
         
         
         self.bioTextView.editable = false
-        
-        
-       
-        
     
-        
         if marketVC == false{
             let swipeRightGestureRecognizer : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showMarketplace")
             swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right
@@ -201,8 +150,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     //LOWER TWO FUNCTIONS ARE CHAT ADDITIONS
     //CHAT ADDITIONS
-    //CHAT ADDITIONS
-    //CHAT ADDITIONS
     
     
     //function for unwind segue
@@ -215,23 +162,16 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     func showChatsTableView(){
         self.performSegueWithIdentifier("toChatsTableView", sender: self)
     }
-
-    
     func showMarketplace(){
         self.performSegueWithIdentifier("toMarketplace", sender: self)
     }
-    
-    
     func backToUserItem() {
         self.performSegueWithIdentifier("backToItem", sender: self)
     }
-    
-    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
     
     //layout for cell size
 
@@ -243,16 +183,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     
     //loads images from cache or firebase
-    
     func loadImages() {
         dataRef.child("user").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot)
             in
-            
-        
             //adds image name from firebase database to an array
-            
             if let itemDictionary = snapshot.value!["items"] as? NSDictionary {
-            
                 let sortKeys = itemDictionary.keysSortedByValueUsingComparator {
                     (obj1: AnyObject!, obj2: AnyObject!) -> NSComparisonResult in
                     let x = obj1 as! NSNumber
@@ -263,13 +198,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
                 for key in sortKeys {
                     self.imageNameArray.append("\(key)")
                 }
-            
                 if (self.imageArray.count == 0){
                     for index in 0..<self.imageNameArray.count {
                         self.imageArray.append(UIImage(named: "Examples")!)
                     }
                 }
-            
                 dispatch_async(dispatch_get_main_queue(),{
                     self.collectionView.reloadData()
                 })
@@ -278,21 +211,15 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     }
     
-    //sets up the collection view
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageNameArray.count
-    }
     
- 
-
+    // Placeholder Color
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.blackColor()
         }
     }
-    
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = placeHolderText
@@ -300,7 +227,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
         }
     }
     
-    
+    //Sets up the collection view
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imageNameArray.count
+    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -340,14 +270,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
                             }
                         }
                     }
-                    }.resume()
+                }.resume()
             }
         }
         return cell
     }
 
-    
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("showImage", sender: self)
     }
@@ -361,14 +289,9 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             
             
             destinationVC.image = self.imageArray[indexPath.row]
-            
             destinationVC.imageName  = self.imageNameArray[indexPath.row]
-            
             destinationVC.userName = self.name.text!
-            
             destinationVC.otherUser = self.otherUser.boolValue
-
-            
             destinationVC.userID = self.userID
             
             if marketVC == true {
@@ -415,8 +338,8 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             
             if let name = result ["name"] as? String {
                 self.dataRef.child("user").child(self.userID!).child("name").setValue(name)
-                //CHAT ADDITION
-                //CHAT ADDITION
+            
+                
                 //CHAT ADDITION
                 self.currentUserName = name
             }
@@ -536,7 +459,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
 
     }
     
-    
     func getProfileImage() {
         
         if let image = NSCache.sharedInstance.objectForKey(userID!) as? UIImage{
@@ -556,27 +478,19 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             }
         }
     }
-    
 
-        
-        
-      
-    
     
     @IBAction func cameraPushed(sender: AnyObject) {
         performSegueWithIdentifier("showCamera", sender: self)
     }
     
-    
+
+
+    ////////////////////////////// CONNECTION /////////////////////////
     //connections functions
-    
     //0 means requested (pending)
     //1 means waiting to connect (on the other user's side)
     //2 means givnited (both accepted)
-    
-   
-    
-
     
     @IBAction func connectAction(sender: AnyObject) {
         //default

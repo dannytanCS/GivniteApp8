@@ -148,6 +148,7 @@ class ChatsTableViewController: UIViewController, UITableViewDataSource, UITable
             //Done making messages bold ^^
             
             let otherUID = thisDict?.valueForKey("otherUID") as? String
+            
 //            let otherImage = getImageUrl(otherUID!)
 //            if otherImage.absoluteString != ""{
 //                cell.profileImageView.image = UIImage(data: NSData(contentsOfURL: otherImage)!)

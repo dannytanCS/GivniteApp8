@@ -334,18 +334,10 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imageNameArray.count
     }
-    
-    
-    
-
-    
+  
     var priceCache = [String:String]()
-    
     var bookCache = [String:String]()
-    
-    
 
-    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         

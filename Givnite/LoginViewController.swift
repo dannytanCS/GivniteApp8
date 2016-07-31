@@ -21,7 +21,6 @@ class LoginViewContrller: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         self.facebookLogin()
      
     }

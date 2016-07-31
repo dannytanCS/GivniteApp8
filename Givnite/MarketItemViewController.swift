@@ -242,6 +242,8 @@ class MarketItemViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
     
     }
+    
+    
     @IBAction func buttonPressed(sender: SpringButton) {
         //var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ItemViewController.timefunc), userInfo: nil, repeats: true)
         timefunc()

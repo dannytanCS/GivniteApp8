@@ -13,45 +13,27 @@ import FirebaseDatabase
 
 class DescriptionViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    // Firebase Connection
+    let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
+    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
+    
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var bookName: UITextField!
-    
-    
     @IBOutlet weak var bookPrice: UITextField!
-    
-    
     @IBOutlet weak var bookDescription: UITextView!
 
-    
     var image = UIImage()
     var imageName = ""
-
-
     var imageList = [UIImage]()
-    
     var imageNameList = [String]()
-    
     var imageIndex: Int = 0
-    
     var maxImages: Int = 0
-    
     var imageDict = [UIImage:AnyObject]()
-    
-    var placeHolderText = "placeholder"
-
-    
-    
-    let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
-    
-    let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
+    var placeHolderText = "Write about the quality and its usefulness to increase views!"
     let user = FIRAuth.auth()!.currentUser
 
     @IBOutlet weak var pageControl: UIPageControl!
-    
-    
     @IBOutlet weak var label: UILabel!
-    
     @IBAction func doneButtonClicked(sender: AnyObject) {
         databaseRef.child("marketplace").child(imageName).child("price").setValue(bookPrice.text)
         databaseRef.child("marketplace").child(imageName).child("searchable").child("book name").setValue(bookName.text)
@@ -62,16 +44,11 @@ class DescriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
             databaseRef.child("marketplace").child(imageName).child("searchable").child("description").setValue(bookDescription.text)
         }
     }
-    
-    
-    //adds additional picture
-    
+
+    //Adds additional picture
     @IBAction func cameraButton(sender: AnyObject) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
         actionSheet.addAction(UIAlertAction(title: "Upload from Photo Library", style:.Default, handler: { action in
-            
-            
             let picker = UIImagePickerController()
             picker.sourceType = .PhotoLibrary
             picker.delegate = self

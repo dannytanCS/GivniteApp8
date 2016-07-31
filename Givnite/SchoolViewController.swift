@@ -51,7 +51,7 @@ class SchoolViewController: UIViewController, UITextFieldDelegate {
                 NYUClicked = true
                 schoolName = "New York University"
                 let user = FIRAuth.auth()?.currentUser
-                dataRef.child("user").child("\(user!.uid)/school").setValue(schoolName)
+                dataRef.child("user").child(user!.uid).child("school").setValue(schoolName)
                 self.schoolButton.hidden = false
                 betaButton.hidden = true
     
@@ -202,7 +202,6 @@ class SchoolViewController: UIViewController, UITextFieldDelegate {
         dataRef.child("user").child(user!.uid).child("queryres").child("1").setValue("")
         dataRef.child("user").child("\(user!.uid)/graduation year").setValue(GraduationYear.text)
         dataRef.child("user").child("\(user!.uid)/major").setValue(Major.text)
-        
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -251,9 +250,6 @@ class SchoolViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-
-
     
     /*
     // MARK: - Navigation

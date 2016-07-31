@@ -9,14 +9,9 @@
 import UIKit
 
 class User {
-    
     var name:String?
     var picture: String?
     var school:String?
-    
     var graduationYear: Int?
     var connection: Int?
-    
-    
-    
 }

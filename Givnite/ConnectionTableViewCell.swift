@@ -17,17 +17,11 @@
 import UIKit
 
 class ConnectionTableViewCell: UITableViewCell {
-    
-    
-    
+
     @IBOutlet weak var userImage: UIImageView!
-    
     @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var userSchool: UILabel!
-    
     @IBOutlet weak var connectButton: UIButton!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
