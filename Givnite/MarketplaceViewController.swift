@@ -456,7 +456,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         
         
-        cell.profileImageButton.addTarget(self, action: "self.buttonClicked", forControlEvents: .TouchUpInside)
+        cell.profileImageButton.addTarget(self, action: #selector(self.buttonClicked(_:)), forControlEvents: .TouchUpInside)
         return cell
     }
 

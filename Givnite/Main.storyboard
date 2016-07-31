@@ -2487,9 +2487,9 @@
         <image name="user" width="23" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rF6-7x-mK6"/>
-        <segue reference="Nm1-oM-csR"/>
+        <segue reference="VtU-44-gMG"/>
         <segue reference="qG4-99-uBB"/>
+        <segue reference="Nm1-oM-csR"/>
         <segue reference="Ldv-4t-Rae"/>
         <segue reference="Mgg-ae-R6I"/>
     </inferredMetricsTieBreakers>
