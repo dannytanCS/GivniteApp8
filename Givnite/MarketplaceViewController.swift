@@ -475,6 +475,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
             self.userID = self.userArray[indexPath.row]
             if let string = self.userArray[indexPath.row] as? String {
                
+
                 
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.performSegueWithIdentifier("showProfile", sender: self)
@@ -524,8 +525,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
             
             
             destinationVC.userID = self.userID
-            
-
+        
         
             destinationVC.otherUser = true
 
