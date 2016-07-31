@@ -76,11 +76,8 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     // View Loaded
     override func viewDidLoad() {
-<<<<<<< HEAD
         connectButton.hidden = true
-=======
-        
->>>>>>> origin
+
         if otherUser == false && marketVC == false {
             userID = self.user?.uid
             storesInfoFromFB()
@@ -172,15 +169,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     func backToUserItem() {
         self.performSegueWithIdentifier("backToItem", sender: self)
     }
-<<<<<<< HEAD
+
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-=======
-    
-    
->>>>>>> origin
+
     
     //layout for cell size
 
@@ -491,9 +485,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             getImageFromStorage()
         }
     }
-<<<<<<< HEAD
 
-=======
     
     func getImageFromStorage() {
         let profilePicRef = storageRef.child(userID!+"/profile_pic.jpg")
@@ -513,9 +505,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
 
     
     
-    
-    
->>>>>>> origin
+
     
     @IBAction func cameraPushed(sender: AnyObject) {
         performSegueWithIdentifier("showCamera", sender: self)
