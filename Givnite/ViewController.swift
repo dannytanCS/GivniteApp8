@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         loadingIndicator.startAnimating()
         
-        
         //sign out
         //try! FIRAuth.auth()!.signOut()
         //FBSDKAccessToken.setCurrentAccessToken(nil)
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         let dataRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
-        
         
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in

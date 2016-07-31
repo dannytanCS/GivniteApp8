@@ -489,7 +489,6 @@ class ItemViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
                 self.maxImages += 1
                 self.pageControl.numberOfPages += 1
                 self.loadImages()
-                
             }
         }
     }

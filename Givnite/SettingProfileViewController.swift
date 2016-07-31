@@ -20,7 +20,6 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
     
-    
     var changePictureActionSheet: UIAlertController?
     let databaseRef = FIRDatabase.database().referenceFromURL("https://givniteapp-292f6.firebaseio.com/")
     let storageRef = FIRStorage.storage().referenceForURL("gs://givniteapp-292f6.appspot.com")
@@ -42,6 +41,7 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
         //loads data from firebase
         dataFromFirebase()
         getProfileImage()
+
     }
     
     func dismissKeyboard() {
@@ -118,6 +118,7 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
     
     // Get Profile Image
     func getProfileImage() {
+
         if let image = NSCache.sharedInstance.objectForKey(user!.uid) as? UIImage{
             self.profileImageView.image = image
         }
@@ -127,7 +128,7 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
                 if (error != nil) {
                     // Uh-oh, an error occurred!
                 } else {
-                    var cacheImage = UIImage(data: data!)
+                    let cacheImage = UIImage(data: data!)
                     self.profileImageView.image = cacheImage
                     NSCache.sharedInstance.setObject(cacheImage!, forKey: self.user!.uid)
                 }
@@ -139,6 +140,38 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
     @IBAction func updateButton(sender: AnyObject) {
         databaseRef.child("user").child(user!.uid).child("major").setValue(majorTextField.text)
         databaseRef.child("user").child(user!.uid).child("bio").setValue(aboutTextView.text)
+        
+        updateProfileImage()
+        
+    }
+    
+    func updateProfileImage() {
+        
+        let profilePicRef = storageRef.child(user!.uid).child("profile_pic.jpg")
+        let image = self.profileImageView.image
+        let imageData: NSData = UIImageJPEGRepresentation(image!, 0)!
+        let uploadTask = profilePicRef.putData(imageData, metadata: nil){
+            metadata, error in
+            
+            if(error == nil) {
+                let downloadURL = metadata!.downloadURL
+                
+                profilePicRef.downloadURLWithCompletion { (URL, error) -> Void in
+                    if (error != nil) {
+                        // Handle any errors
+                    }
+                    else {
+                        self.databaseRef.child("user").child("\(self.user!.uid)/picture").setValue("\(URL!)")
+                        NSCache.sharedInstance.setObject(image!, forKey: "\(self.user!.uid)")
+                        print(image)
+                    }
+                }
+            }
+            else{
+                print ("Error in downloading image")
+            }
+        }
+
     }
 
 }

@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class SettingTableViewController: UITableViewController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +42,6 @@ class SettingTableViewController: UITableViewController {
     
     @IBAction func goBackToProfile(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     

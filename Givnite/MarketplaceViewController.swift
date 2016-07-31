@@ -448,7 +448,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         
         
-        cell.profileImageButton.addTarget(self, action: "self.buttonClicked", forControlEvents: .TouchUpInside)
+        cell.profileImageButton.addTarget(self, action: #selector(self.buttonClicked(_:)), forControlEvents: .TouchUpInside)
         return cell
     }
 
@@ -467,6 +467,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
             self.userID = self.userArray[indexPath.row]
             if let string = self.userArray[indexPath.row] as? String {
                
+
                 
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.performSegueWithIdentifier("showProfile", sender: self)
@@ -516,8 +517,7 @@ class MarketplaceViewController: UIViewController, UICollectionViewDelegate, UIC
             
             
             destinationVC.userID = self.userID
-            
-
+        
         
             destinationVC.otherUser = true
 

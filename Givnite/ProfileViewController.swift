@@ -76,7 +76,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     // View Loaded
     override func viewDidLoad() {
+<<<<<<< HEAD
         connectButton.hidden = true
+=======
+        
+>>>>>>> origin
         if otherUser == false && marketVC == false {
             userID = self.user?.uid
             storesInfoFromFB()
@@ -168,10 +172,15 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     func backToUserItem() {
         self.performSegueWithIdentifier("backToItem", sender: self)
     }
+<<<<<<< HEAD
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+=======
+    
+    
+>>>>>>> origin
     
     //layout for cell size
 
@@ -356,30 +365,40 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
                 self.dataRef.child("user").child(self.userID!).child("gender").setValue(gender)
             }
             
-            if let picture = result["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary,url = data["url"] as? String {
             
-                if let imageData = NSData(contentsOfURL: NSURL (string:url)!) {
-                    let uploadTask = profilePicRef.putData(imageData, metadata: nil){
-                        metadata, error in
-                            
-                        if(error == nil) {
-                            let downloadURL = metadata!.downloadURL
-                            
-                            profilePicRef.downloadURLWithCompletion { (URL, error) -> Void in
-                                if (error != nil) {
-                                    // Handle any errors
+            self.dataRef.child("user").child(self.userID!).child("picture").observeSingleEventOfType(.Value, withBlock: { (snapshot)
+                in
+
+                if let url = snapshot.value as? String {
+                    return
+                }
+                else {
+                    if let picture = result["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary,url = data["url"] as? String {
+                    
+                        if let imageData = NSData(contentsOfURL: NSURL (string:url)!) {
+                            let uploadTask = profilePicRef.putData(imageData, metadata: nil){
+                                metadata, error in
+                                    
+                                if(error == nil) {
+                                    let downloadURL = metadata!.downloadURL
+                                    
+                                    profilePicRef.downloadURLWithCompletion { (URL, error) -> Void in
+                                        if (error != nil) {
+                                            // Handle any errors
+                                        }
+                                        else {
+                                            self.dataRef.child("user").child("\(self.user!.uid)/picture").setValue("\(URL!)")
+                                        }
+                                    }
                                 }
-                                else {
-                                    self.dataRef.child("user").child("\(self.user!.uid)/picture").setValue("\(URL!)")
+                                else{
+                                    print ("Error in downloading image")
                                 }
                             }
                         }
-                        else{
-                            print ("Error in downloading image")
-                        }
                     }
                 }
-            }
+            })
         }
     }
     
@@ -461,24 +480,42 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     
     func getProfileImage() {
         
+        
         if let image = NSCache.sharedInstance.objectForKey(userID!) as? UIImage{
+            
             self.profilePicture.image = image
         }
             
         else {
-            let profilePicRef = storageRef.child(userID!+"/profile_pic.jpg")
-            profilePicRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
-                if (error != nil) {
-                    // Uh-oh, an error occurred!
-                } else {
-                    var cacheImage = UIImage(data: data!)
-                    self.profilePicture.image = cacheImage
-                    NSCache.sharedInstance.setObject(cacheImage!, forKey: self.userID!)
-                }
-            }
+            
+            getImageFromStorage()
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+    func getImageFromStorage() {
+        let profilePicRef = storageRef.child(userID!+"/profile_pic.jpg")
+        print(123)
+        profilePicRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+            } else {
+                var cacheImage = UIImage(data: data!)
+                print(cacheImage)
+                self.profilePicture.image = cacheImage
+                NSCache.sharedInstance.setObject(cacheImage!, forKey: self.userID!)
+            }
+        }
+
+    }
+
+    
+    
+    
+    
+>>>>>>> origin
     
     @IBAction func cameraPushed(sender: AnyObject) {
         performSegueWithIdentifier("showCamera", sender: self)
