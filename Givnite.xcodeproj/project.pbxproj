@@ -13,6 +13,9 @@
 		5A43FFC61D415A38005A0E18 /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */; };
 		5A43FFC81D415A5E005A0E18 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */; };
 		7E00AC7F1D4D019F003E6C7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */; };
+		7E17936C1D4FA0F90073C774 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17936B1D4FA0F90073C774 /* ReviewsViewController.swift */; };
+		7E17936E1D4FA5CA0073C774 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17936D1D4FA5CA0073C774 /* ReviewTableViewCell.swift */; };
+		7E1793701D4FAD2A0073C774 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17936F1D4FAD2A0073C774 /* Reviewer.swift */; };
 		7E3585801D3163E200CDBB76 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35857F1D3163E200CDBB76 /* ItemViewController.swift */; };
 		7E3585821D31645000CDBB76 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3585811D31645000CDBB76 /* CollectionViewCell.swift */; };
 		7E42DF791D3A8B250074E8BC /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E42DF781D3A8B250074E8BC /* MarketplaceViewController.swift */; };
@@ -29,7 +32,7 @@
 		7EBCD2D71D496C23004203FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCD2D61D496C23004203FE /* User.swift */; };
 		7ECAFC201D4189C600BDFC80 /* NSCache+Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAFC1F1D4189C600BDFC80 /* NSCache+Singleton.swift */; };
 		7ED2A7421D3BE42600478551 /* MarketItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2A7411D3BE42600478551 /* MarketItemViewController.swift */; };
-		7EE5889A1D4C0A7C00A0AD71 /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE588991D4C0A7C00A0AD71 /* SettingProfileViewController.swift */; };
+		7EE5889A1D4C0A7C00A0AD71 /* SettingProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE588991D4C0A7C00A0AD71 /* SettingProfileTableViewController.swift */; };
 		7EE5889C1D4C118800A0AD71 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5889B1D4C118800A0AD71 /* SettingTableViewController.swift */; };
 		7EE5889E1D4C12D100A0AD71 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5889D1D4C12D100A0AD71 /* LogOutViewController.swift */; };
 		7EF8D0451D4A6DDB006FDF05 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */; };
@@ -82,6 +85,9 @@
 		5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleChatViewController.swift; sourceTree = "<group>"; };
 		5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		7E00AC7E1D4D019F003E6C7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E17936B1D4FA0F90073C774 /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		7E17936D1D4FA5CA0073C774 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		7E17936F1D4FAD2A0073C774 /* Reviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviewer.swift; sourceTree = "<group>"; };
 		7E35857F1D3163E200CDBB76 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		7E3585811D31645000CDBB76 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7E42DF781D3A8B250074E8BC /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +104,7 @@
 		7EBCD2D61D496C23004203FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7ECAFC1F1D4189C600BDFC80 /* NSCache+Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCache+Singleton.swift"; sourceTree = "<group>"; };
 		7ED2A7411D3BE42600478551 /* MarketItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketItemViewController.swift; sourceTree = "<group>"; };
-		7EE588991D4C0A7C00A0AD71 /* SettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
+		7EE588991D4C0A7C00A0AD71 /* SettingProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingProfileTableViewController.swift; sourceTree = "<group>"; };
 		7EE5889B1D4C118800A0AD71 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		7EE5889D1D4C12D100A0AD71 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,10 +201,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E17936A1D4FA0760073C774 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				7E17936B1D4FA0F90073C774 /* ReviewsViewController.swift */,
+				7E17936D1D4FA5CA0073C774 /* ReviewTableViewCell.swift */,
+				7E17936F1D4FAD2A0073C774 /* Reviewer.swift */,
+			);
+			name = Reviews;
+			sourceTree = "<group>";
+		};
+		7E7636051D4FC9D60063965C /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */,
+				7EBCD2D21D4942E8004203FE /* ConnectionViewController.swift */,
+				7EBCD2D61D496C23004203FE /* User.swift */,
+			);
+			name = Connections;
+			sourceTree = "<group>";
+		};
 		7EE588981D4C0A2F00A0AD71 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				7EE588991D4C0A7C00A0AD71 /* SettingProfileViewController.swift */,
+				7EE588991D4C0A7C00A0AD71 /* SettingProfileTableViewController.swift */,
 				7EE5889B1D4C118800A0AD71 /* SettingTableViewController.swift */,
 				7EE5889D1D4C12D100A0AD71 /* LogOutViewController.swift */,
 			);
@@ -241,13 +267,12 @@
 				7ECAFC1F1D4189C600BDFC80 /* NSCache+Singleton.swift */,
 				7E64DFAF1D3AA4920087A700 /* MarketCollectionViewCell.swift */,
 				7ED2A7411D3BE42600478551 /* MarketItemViewController.swift */,
-				7EBCD2D21D4942E8004203FE /* ConnectionViewController.swift */,
-				7EBCD2D61D496C23004203FE /* User.swift */,
-				7EF8D0441D4A6DDB006FDF05 /* ConnectionTableViewCell.swift */,
 				5A43FFC31D415A0D005A0E18 /* ChatsTableViewController.swift */,
 				5A43FFC71D415A5E005A0E18 /* ChatTableViewCell.swift */,
 				5A43FFC51D415A38005A0E18 /* SingleChatViewController.swift */,
 				7EA0A9211D300A0100CD895E /* Main.storyboard */,
+				7E7636051D4FC9D60063965C /* Connections */,
+				7E17936A1D4FA0760073C774 /* Reviews */,
 				7EE588981D4C0A2F00A0AD71 /* Settings */,
 				C44D0E371D277FDC00C8EC92 /* Assets.xcassets */,
 				C44D0E391D277FDC00C8EC92 /* LaunchScreen.storyboard */,
@@ -427,6 +452,7 @@
 				7EFF08E31D3EB964000C0E4D /* ViewController.swift in Sources */,
 				C48259731D402F6D00E3497F /* SpringImageView.swift in Sources */,
 				C44D0E331D277FDC00C8EC92 /* LoginViewController.swift in Sources */,
+				7E1793701D4FAD2A0073C774 /* Reviewer.swift in Sources */,
 				7E83B4F61D41983500D54014 /* LeftToRight.swift in Sources */,
 				5A43FFC61D415A38005A0E18 /* SingleChatViewController.swift in Sources */,
 				7EE5889E1D4C12D100A0AD71 /* LogOutViewController.swift in Sources */,
@@ -451,7 +477,7 @@
 				5A43FFC21D4159D5005A0E18 /* RightToLeftUnwind.swift in Sources */,
 				C48259781D402F6D00E3497F /* TransitionManager.swift in Sources */,
 				C4A50D481D2813F20044C65F /* TextFieldEffect.swift in Sources */,
-				7EE5889A1D4C0A7C00A0AD71 /* SettingProfileViewController.swift in Sources */,
+				7EE5889A1D4C0A7C00A0AD71 /* SettingProfileTableViewController.swift in Sources */,
 				7EA8501A1D2ED94E00E05190 /* SchoolViewController.swift in Sources */,
 				7EE5889C1D4C118800A0AD71 /* SettingTableViewController.swift in Sources */,
 				C45C8F971D29ACC100EBD978 /* ProfileViewController.swift in Sources */,
@@ -460,11 +486,13 @@
 				C48259711D402F6D00E3497F /* SpringAnimation.swift in Sources */,
 				7E83B4F81D419B2F00D54014 /* LeftToRightUnwind.swift in Sources */,
 				C48259651D402F6D00E3497F /* DesignableTabBarController.swift in Sources */,
+				7E17936C1D4FA0F90073C774 /* ReviewsViewController.swift in Sources */,
 				C48259681D402F6D00E3497F /* DesignableView.swift in Sources */,
 				C48259601D402F6D00E3497F /* AutoTextView.swift in Sources */,
 				C48259671D402F6D00E3497F /* DesignableTextView.swift in Sources */,
 				C44D0E311D277FDC00C8EC92 /* AppDelegate.swift in Sources */,
 				C482595F1D402F6D00E3497F /* AsyncImageView.swift in Sources */,
+				7E17936E1D4FA5CA0073C774 /* ReviewTableViewCell.swift in Sources */,
 				C48259661D402F6D00E3497F /* DesignableTextField.swift in Sources */,
 				C48259761D402F6D00E3497F /* SpringTextView.swift in Sources */,
 				7EF976CC1D304178000E22F8 /* Camera.swift in Sources */,

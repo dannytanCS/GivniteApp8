@@ -296,12 +296,7 @@ class ItemViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             
             let destinationVC = segue.destinationViewController as! ProfileViewController
             
-            let transition = CATransition()
-            transition.duration = 0.3
-            transition.type = kCATransitionMoveIn
-            transition.subtype = kCATransitionFromBottom
-            view.window!.layer.addAnimation(transition, forKey: kCATransition)
-        
+            self.dismissViewControllerAnimated(true, completion: nil)
             
             destinationVC.userID = self.userID
             destinationVC.otherUser = self.otherUser

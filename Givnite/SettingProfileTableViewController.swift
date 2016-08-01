@@ -12,10 +12,12 @@ import FirebaseStorage
 import FirebaseDatabase
 
 
-class SettingProfileViewController: UIViewController,UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingProfileTableViewController: UITableViewController,UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var schoolLabel: UILabel!
+   
+    
     @IBOutlet weak var majorTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
@@ -35,7 +37,7 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
 
         //tap gesture recognizer
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingProfileViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingProfileTableViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         //loads data from firebase
@@ -59,6 +61,16 @@ class SettingProfileViewController: UIViewController,UITextFieldDelegate, UIText
         }
         return true
     }
+    
+    
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 5
+    }
+    
+    
     
     // Change Profile Picture
     @IBAction func changeProfilePictureButton(sender: AnyObject) {

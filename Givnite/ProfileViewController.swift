@@ -35,6 +35,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
     //connection buttons
     @IBOutlet weak var connectButton: DesignableButton!
     @IBOutlet weak var connectionButton: UIButton!
+    
+    
+   
+    
    
     var currentStateConnection:String?
     var imageNameArray = [String]()
@@ -87,8 +91,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             settingButton.hidden = true
             addButton.hidden = true
             connectionButton.hidden = true
-        if (user!.uid != userID!) {
-                print(123123)
+            if (user!.uid != userID!) {
                 connectButton.hidden = false
             }
         }
@@ -323,6 +326,18 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             destinationVC.userID = self.userID
             destinationVC.imageName = self.savedImageName
         }
+        
+        else if segue.identifier == "leaveMessage" {
+            
+            let destinationVC = segue.destinationViewController as! UINavigationController
+            let destVC = destinationVC.viewControllers[0] as! ReviewsViewController
+            
+            destVC.userID = self.userID
+            if (user!.uid != userID!) {
+                destVC.sameUser = false
+            }
+            
+        }
     }
     
     
@@ -423,7 +438,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate,UICollectionVi
             if let bioDescription = snapshot.value!["bio"] as? String {
 
                 if bioDescription == "" || bioDescription == self.placeHolderText{
-                    self.bioTextView.text = self.placeHolderText
+                    self.bioTextView.text = ""
                     self.bioTextView.textColor = UIColor.lightGrayColor()
                 }
                 else {
